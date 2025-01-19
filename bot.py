@@ -124,7 +124,7 @@ with client:
 @SatsNova"""
 
                         client2.send_message(-1002435914891, respo,parse_mode='html')
-                wd = SatsNovaScrapper(message.id)
+                wd = RoldexVerseCcs(message.id)
         except errors.FloodWaitError as e:
             print('Have to sleep', e.seconds, 'seconds')
             time.sleep(e.seconds)
