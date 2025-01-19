@@ -54,8 +54,9 @@ with client:
             ]
             fornum = len(channelList)
             for i in range(0, fornum):
-                # Iterate over messages in the channel
-                async for message in client.iter_messages(channelList[i], min_id=rd, wait_time=5):
+                # Iterate over messages in the channel synchronously
+                messages = client.iter_messages(channelList[i], min_id=rd, wait_time=5)
+                for message in messages:
                     msg = message.text
                     if len(msg) == 0:
                         raise Exception('empty data')
